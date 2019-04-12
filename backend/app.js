@@ -116,5 +116,8 @@ mongoose.connect("mongodb://admin:admin1@ds255784.mlab.com:55784/my-chat")
             }
         })
     })
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '../build/index.html'))
+        })
 
     module.exports=app;
